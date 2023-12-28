@@ -70,7 +70,10 @@ Compensation
 
                 this.board = element
 
-                // add first two cards programmatically
+                // add first three cards programmatically
+                this.push()
+                this.push()
+                this.push()
                 this.push()
                 this.push()
 
@@ -89,6 +92,15 @@ Compensation
 
                 // get next card
                 this.nextCard = this.cards[this.cards.length - 2]
+
+                //get next next card
+                this.cardThree = this.cards[this.cards.length - 3]
+
+                //get 4th card
+                this.cardFour = this.cards[this.cards.length - 4]
+
+                //get 5th card
+                this.cardFive = this.cards[this.cards.length - 5]
 
                 // if at least one card is present
                 if (this.cards.length > 0) {
