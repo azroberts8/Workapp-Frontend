@@ -3,46 +3,48 @@
     <head>
         <meta charset="UTF-8">
         <title>Profile-Page</title>
+        <link rel="stylesheet" href="../css/styles.css">
     </head>
-    <style>
-         .body {
-            width: 500px;
-         }
-    </style>
     <body>
        <div class="header-section">
+        <div class="topnav">
+            <a href="../index.html">Home</a>
+            <a href="../profilePage/submissions.html">Submissions</a>
+            <a href="../profilePage/profile.html">Profile</a>
+        </div>
        </div>
+       <div class="img"></div>
        <div class="body">
-        <form>
+        <form action="" method="post">
             <fieldset>
+                <legend><h3>Student Name</h3></legend>
                 <label>First Name:</label>
                 <input type="text" value="Stephen">
                 <label>Last Name:</label>
                 <input type="text" value="Wiafe">
             </fieldset>
-            <fieldset>
+            <fieldset class="about">
                 <legend><h3>About</h3></legend>
-                <p> My name is Stephen Wiafe, a Junior Computer Science Student
-                    at the University of Delaware. blah blah
-                </p>
+                <input class="about-txt" type="text"/>
             </fieldset>
             <fieldset>
                 <legend><h3>Resume</h3></legend>
-                <div>
-                    <input type="file">
-                </div>
+                <input type="file">
             </fieldset>
             <fieldset>
                 <legend><h3>Education</h3></legend>
-                <label>School Name:</label>
-                <select name="dog-names" id="dog-names"> 
-                    <option value="UD">University of Delaware</option> 
-                    <option value="Temple">Temple University</option> 
-                    <option value="DSU">Delaware State University</option> 
-                    <option value="DTCC">Delaware Technical Community College</option> 
-                    <option value="WP">William Penn Highschool</option> 
-                </select>
-                <label>Major:</label>
+                <div>
+                    <label>School Name:</label>
+                    <select name="dog-names" id="dog-names"> 
+                        <option value="UD">University of Delaware</option> 
+                        <option value="Temple">Temple University</option> 
+                        <option value="DSU">Delaware State University</option> 
+                        <option value="DTCC">Delaware Technical Community College</option> 
+                        <option value="WP">William Penn Highschool</option> 
+                    </select>
+                </div>
+                <div>
+                    <label>Major:</label>
                 <select name="Major" id="major"> 
                     <option value="CS">Computer Science</option> 
                     <option value="IS">Information System</option> 
@@ -59,22 +61,28 @@
                     <option value="EE">Electrical Engineering</option> 
                     <option value="ME">Mechanical Engineering</option> 
                 </select>
+                </div>
+               <div>
                 <label for="GPA">GPA</label>
-                <input id=GPA value="optional?">
-                <label>Start Date:</label>
+                <input id=GPA type="text" value="0.0">
+                <div>
+                    <label>Start Date:</label>
                 <input type="date">
                 <label>End Date:</label>
                 <input type="date">
+                </div>
+                
+               </div>
             </fieldset>
             <fieldset>
                 <legend><h3>Skills/Experience</h3></legend>
-                <h4>Software Engineering, Intern</h4>
+                <h4>Position X, Intern</h4>
                 <ul>
                     <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</li>
                     <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</li>
                     <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</li>
                 </ul>
-                <h4>Teaching Assistant</h4>
+                <h4>Positon X, Intern</h4>
                 <ul>
                     <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</li>
                     <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</li>
@@ -86,9 +94,13 @@
             </fieldset>
             <fieldset>
                 <legend><h3>Clubs/Extra Curricular</h3></legend>
-                <p></p>
             </fieldset>
             </div>
+            <div>
+                <button>Cancel</button>
+                <button>Save</button>
+            </div>
+           
         </form>
        </div>
     </body>
