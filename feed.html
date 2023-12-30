@@ -11,6 +11,7 @@ Compensation
 
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work App</title>
@@ -34,9 +35,9 @@ Compensation
         .card {
             font-family: Georgia, serif;
             width: 100vw;
-            max-width: 512px;
+            max-width: 420px;
             height: 100vh;
-            max-height: 900px;
+            max-height: 850px;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -50,11 +51,13 @@ Compensation
         }
         .cardInformation {
             width: 100%;
+            height: 100%;
 
             display: grid;
             grid-template-columns: 3fr 1fr;
-            gap: 2%;
-            grid-auto-rows: minmax(10%, auto);
+            gap: 1%;
+            /*grid-auto-rows: minmax(10%, auto);*/
+            grid-template-rows: .5fr .5fr 2fr
         }
         h4.cardInformation {
             margin: 1%;
@@ -275,7 +278,6 @@ Compensation
 
                 //@TODO make css card elements proportional to the screen they're on.
                 //@TODO Add a "tap to learn more", and a ... at the end of a description when its too long.
-                //@TODO Fix the temp fix of card height: 900px, just in case it doesnt fit MacBooks or other small stuff
 
                 let card = document.createElement('div')
                 let cardInformation = document.createElement('div')
@@ -286,13 +288,14 @@ Compensation
                 let position = "Software Engineer"
                 let company = "Sparks Lab"
                 let description = "Boring ahh job ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a convallis tellus, nec vulputate mi. Duis nec lorem ante. Cras et metus nec arcu iaculis accumsan non vitae justo. Fusce at erat iaculis, porttitor urna quis, consequat purus. Suspendisse at tellus a arcu sodales placerat. Phasellus at ex tincidunt purus maximus varius quis vel purus."
-                let restrictions = "16+ age"
+                let restrictions = ["16+ age", "35+yrs experience", "Typescript", "AngularJS","Magical Powers", "All-Knowing"]
                 let compensation = "80-100k yr"
                 let jobType = "Internship"
 
+                //Card inner HTML
                 cardInformation.innerHTML = 
-                `<div style="grid-column: 1; grid-row: 1;">
-                    <h2 style='margin: 3%;'>${position}</h2>
+                `<div style="grid-column: 1; grid-row: 1; width: 100%">
+                    <h2 style='margin: 1%;'>${position}</h2>
                     <p style='margin: 1%;'>${jobType}, ${company}</p>
                     <p style='margin: 1%;'>${location}</p>
                 </div>
@@ -300,14 +303,18 @@ Compensation
                     <p style='margin: 1%;'>${rating}</p>
                     <p style='margin: 1%;'>${compensation}</p>
                 </div>
-                <div style="grid-column: 1/-1; grid-row: 2;">
-                    <h4 style='margin: 3%;'>Restrictions</h4>
-                    <span style='margin: 1%;' class="badge badge-pill badge-dark">${restrictions}</span>
+                <div id='restrictions' style="grid-column: 1/-1; grid-row: 2;">
+                    <h4 style='margin: 1%;'><strong>Restrictions</strong></h4>
                 </div>
                 <div style="grid-column: 1 /-1; grid-row: 3;">
-                    <h4 style='margin: 3%;'>Description</h4>
+                    <h4 style='margin: 1%;'><strong>Description</strong></h4>
                     <p style='margin: 1%;'>${description}</p>
                 </div>`
+
+                //Appending "restrictions" to card
+                for(const item of restrictions){
+                    $("#restrictions").append(`<span style='margin: 1%;' class="badge badge-pill badge-dark">${item}</span>`)
+                }
 
 
                 card.appendChild(cardImage)
