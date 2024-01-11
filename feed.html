@@ -47,11 +47,20 @@
             height: 100%;
 
             display: grid;
-            grid-template-columns: 3fr 1fr;
+            grid-template-columns: .7fr 2.3fr 1fr;
             gap: 1%;
             /*grid-auto-rows: minmax(10%, auto);*/
             grid-template-rows: .5fr .5fr 2fr
         }
+        .circular-image { 
+            padding-top: 5%;
+            width:100%;
+            border-top-left-radius: 50% 50%;
+            border-top-right-radius: 50% 50%;
+            border-bottom-right-radius: 50% 50%;
+            border-bottom-left-radius: 50% 50%; 
+        }
+
 
 
         .header-section {
@@ -323,7 +332,7 @@
                 let cardImage = document.createElement('img')
                 
                 let location = "Newark, DE"
-                let rating = "*****"
+                let rating = "★★★★★"
                 let position = "Software Engineer"
                 let company = "Sparks Lab"
                 let description = "Boring ahh job ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a convallis tellus, nec vulputate mi. Duis nec lorem ante. Cras et metus nec arcu iaculis accumsan non vitae justo. Fusce at erat iaculis, porttitor urna quis, consequat purus. Suspendisse at tellus a arcu sodales placerat. Phasellus at ex tincidunt purus maximus varius quis vel purus."
@@ -334,11 +343,14 @@
                 //Card inner HTML
                 cardInformation.innerHTML = 
                 `<div style="grid-column: 1; grid-row: 1; width: 100%">
+                    <img class="circular-image" src="https://imgs.search.brave.com/YKRz1oWwVqt0zhQ-ejSzyjgRhY7saCMVGGyE0QU63Gw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4u/dmVjdG9yc3RvY2su/Y29tL2kvcHJldmll/dy0xeC8xMC8wNi9y/b3VuZC1hcnJvdy1i/dXNpbmVzcy1sb2dv/LXZlY3Rvci0xNDYz/MTAwNi5qcGc">
+                </div>
+                <div style="grid-column: 2; grid-row: 1; width: 100%">
                     <h2 style='margin: 1%;'>${position}</h2>
                     <p style='margin: 1%;'>${jobType}, ${company}</p>
                     <p style='margin: 1%;'>${location}</p>
                 </div>
-                <div style="grid-column: 2; grid-row: 1;">
+                <div style="grid-column: 3; grid-row: 1;">
                     <p style='margin: 1%;'>${rating}</p>
                     <p style='margin: 1%;'>${compensation}</p>
                 </div>
