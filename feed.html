@@ -4,6 +4,8 @@
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>-->
+    <script src="./jquery.fittext.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Work App</title>
@@ -47,7 +49,7 @@
             height: 100%;
 
             display: grid;
-            grid-template-columns: .7fr 2.3fr 1fr;
+            grid-template-columns: .7fr 2.3fr .7fr;
             gap: 1%;
             /*grid-auto-rows: minmax(10%, auto);*/
             grid-template-rows: .5fr .5fr 2fr
@@ -333,7 +335,7 @@
                 
                 let location = "Newark, DE"
                 let rating = "★★★★★"
-                let position = "Software Engineer"
+                let position = "Electrical Engineer"
                 let company = "Sparks Lab"
                 let description = "Boring ahh job ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a convallis tellus, nec vulputate mi. Duis nec lorem ante. Cras et metus nec arcu iaculis accumsan non vitae justo. Fusce at erat iaculis, porttitor urna quis, consequat purus. Suspendisse at tellus a arcu sodales placerat. Phasellus at ex tincidunt purus maximus varius quis vel purus."
                 let restrictions = ["16+ age", "35+yrs experience", "Typescript", "AngularJS","Magical Powers", "All-Knowing"]
@@ -342,11 +344,12 @@
 
                 //Card inner HTML
                 cardInformation.innerHTML = 
-                `<div style="grid-column: 1; grid-row: 1; width: 100%">
-                    <img class="circular-image" src="https://imgs.search.brave.com/YKRz1oWwVqt0zhQ-ejSzyjgRhY7saCMVGGyE0QU63Gw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4u/dmVjdG9yc3RvY2su/Y29tL2kvcHJldmll/dy0xeC8xMC8wNi9y/b3VuZC1hcnJvdy1i/dXNpbmVzcy1sb2dv/LXZlY3Rvci0xNDYz/MTAwNi5qcGc">
+                `<div style="grid-column: 1; grid-row: 1; width: 100%; margin: 2%;">
+                    <!--<img class="circular-image" src="https://imgs.search.brave.com/YKRz1oWwVqt0zhQ-ejSzyjgRhY7saCMVGGyE0QU63Gw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4u/dmVjdG9yc3RvY2su/Y29tL2kvcHJldmll/dy0xeC8xMC8wNi9y/b3VuZC1hcnJvdy1i/dXNpbmVzcy1sb2dv/LXZlY3Rvci0xNDYz/MTAwNi5qcGc">-->
+                    <img class="circular-image" src="https://picsum.photos/200/200/?random=${Math.round(Math.random() * 1000000)}">
                 </div>
                 <div style="grid-column: 2; grid-row: 1; width: 100%">
-                    <h2 style='margin: 1%;'>${position}</h2>
+                    <p id="responsive-position" style='margin: 1%; font-size: 26px;'>${position}</p>
                     <p style='margin: 1%;'>${jobType}, ${company}</p>
                     <p style='margin: 1%;'>${location}</p>
                 </div>
@@ -354,6 +357,8 @@
                     <p style='margin: 1%;'>${rating}</p>
                     <p style='margin: 1%;'>${compensation}</p>
                 </div>
+                
+
                 <div id='restrictions' style="grid-column: 1/-1; grid-row: 2;">
                     <h4 style='margin: 1%;'><strong>Restrictions</strong></h4>
                 </div>
@@ -366,6 +371,7 @@
                 for(const item of restrictions){
                     $("#restrictions").append(`<span style='margin: 1%;' class="badge badge-pill badge-dark">${item}</span>`)
                 }
+                //$("#responsive-position").fitText(); Library to fit text; works kinda ok
 
 
                 card.appendChild(cardImage)
