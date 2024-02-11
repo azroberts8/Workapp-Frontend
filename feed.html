@@ -3,6 +3,8 @@
 
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>-->
     <script src="./jquery.fittext.js"></script>
@@ -332,9 +334,14 @@
                 let card = document.createElement('div')
                 let cardInformation = document.createElement('div')
                 let cardImage = document.createElement('img')
+
+                const star_half = "<a style='font-size: 14px; padding-top: 4px;' class='material-symbols-outlined'>star_half</a>"
+                const star_empty = "<a style='font-size: 14px; padding-top: 4px;' class='material-symbols-outlined'>star</a>"
+                const star = "★"
                 
                 let location = "Newark, DE"
-                let rating = "★★★★★"
+                let rating = "2.5"
+                //rating.innerHTML = "<span class='material-symbols-outlined'>star_half</span>"
                 let position = "Electrical Engineer"
                 let company = "Sparks Lab"
                 let description = "Boring ahh job ... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a convallis tellus, nec vulputate mi. Duis nec lorem ante. Cras et metus nec arcu iaculis accumsan non vitae justo. Fusce at erat iaculis, porttitor urna quis, consequat purus. Suspendisse at tellus a arcu sodales placerat. Phasellus at ex tincidunt purus maximus varius quis vel purus."
@@ -354,7 +361,7 @@
                     <p style='margin: 1%;'>${location}</p>
                 </div>
                 <div style="grid-column: 3; grid-row: 1;">
-                    <p style='margin: 1%;'>${rating}</p>
+                    <span id="rating" style="display: inline-flex;"></span>
                     <p style='margin: 1%;'>${compensation}</p>
                 </div>
                 
@@ -372,6 +379,11 @@
                     $("#restrictions").append(`<span style='margin: 1%;' class="badge badge-pill badge-dark">${item}</span>`)
                 }
                 //$("#responsive-position").fitText(); Library to fit text; works kinda ok
+                var ratingHTML = "";
+                for(var i=0 ; i<parseInt(rating); i++){ ratingHTML+=star;}
+                if(Number(rating)-parseInt(rating)){ratingHTML+=star_half;}
+                for(var i=0 ; i<(4-parseInt(rating)); i++){ratingHTML+=star_empty;}
+                $("#rating").html(ratingHTML)
 
 
                 card.appendChild(cardImage)
