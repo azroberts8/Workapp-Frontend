@@ -5,47 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
     <script defer src="./search.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />-->
 
+
+    <style>
+        /*html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #board {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            background-color: rgb(188, 53, 53);
+        }*/
+
+        .card {
+            font-family: Georgia, serif;
+            width: 100%;
+            height: 100%;
+            top: 50%;
+            left: 50%;
+            position:absolute;
+            border-radius: 5%;
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+            background-color: rgb(255, 255, 255);
+            transform: translateX(-50%) translateY(-50%) scale(0.95);
+            overflow: hidden;
+            border-style: solid;
+            border-color: rgb(0, 0, 0);*/
+        }
+        .cardInformation {
+            width: 100%;
+            height: 100%;
+
+            display: grid;
+            grid-template-columns: .7fr 2.3fr .7fr;
+            grid-template-rows: 100%;
+        }
+        .circular-image { 
+            padding-top: 5%;
+            height:100%;
+            border-top-left-radius: 50% 50%;
+            border-top-right-radius: 50% 50%;
+            border-bottom-right-radius: 50% 50%;
+            border-bottom-left-radius: 50% 50%; 
+        }
+    </style>
 </head>
-<body>
+<body  width="100vw" height="100vh">
+
+
+
+
+
+
+
     <input type="text" placeholder="Search.." name="search">
     <span class="material-symbols-outlined">search</span>
-    <table>
-        <tbody id="tbody">
-            <tr>
-                <td>
-                    <img src="https://picsum.photos/200/100">
-                </td>
-
-                <td>
-                    <div>
-                        <a href="#">Senior Software Engineer / Developer</a>
-                        <p>
-                            <a href="#">Axiom Corp.</a>
-                            <p>★★★★★</p>
-                        </p>
-                    </div>
-                </td>
-
-                <td>
-                        <p>Full-Time</p>
-                        <p>London, UK</p>
-                </td>
-
-                <td>
-                        <a href="#">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
-                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                            </svg>
-                        </a>
-                </td>
-            </tr>
-
-
-            
+    <table  width="100%" height="100%">
+        <tbody id="tbody" width="100%" height="100%">
         </tbody>
     </table>
 </body>
