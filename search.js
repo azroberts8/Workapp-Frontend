@@ -218,23 +218,6 @@ class Carousel {
         let compensation = "80-100k yr"
         let jobType = "Internship"
 
-        /*let cardTitle = document.createElement('p')
-        let cardDesc = document.createElement('p')
-        let cardOrg = document.createElement('p')
-        let cardRestrict = document.createElement('p')
-        let cardCompensation = document.createElement('p')
-
-        cardTitle.innerText = 'Software Engineer'
-        cardDesc.innerText = 'Free labor plz'
-        cardOrg.innerText = 'Fart Company'
-        cardRestrict.innerText = 'ages 16+'
-        cardCompensation.innerText = '$100,000 yr'
-
-        cardInformation.appendChild(cardTitle)
-        cardInformation.appendChild(cardDesc)
-        cardInformation.appendChild(cardOrg)
-        cardInformation.appendChild(cardRestrict)
-        cardInformation.appendChild(cardCompensation)*/
 
         cardInformation.innerHTML = 
         `<div style="grid-column: 1; width: 100%; margin: 2%;">
@@ -251,19 +234,17 @@ class Carousel {
             <p style='margin: 1%;'>${compensation}</p>
         </div>`
 
-        for(const item of restrictions){
+        /*for(const item of restrictions){
             $("#restrictions").append(`<span style='margin: 1%;' class="badge badge-pill badge-dark">${item}</span>`)
-        }
+        }*/
         var ratingHTML = "";
         for(var i=0 ; i<parseInt(rating); i++){ ratingHTML+=star;}
         if(Number(rating)-parseInt(rating)){ratingHTML+=star_half;}
         for(var i=0 ; i<(4-parseInt(rating)); i++){ratingHTML+=star_empty;}
-        $("#rating").html(ratingHTML)
+        cardInformation.querySelector("span").innerHTML = ratingHTML
         
+        //TODO Make search page mobile friendly
 
-        //TODO fix this #rating to have the unique card ID maybe or just get the element and add it probably
-
-        //card.appendChild(cardImage)
         card.appendChild(cardInformation)
     
 
