@@ -8,7 +8,7 @@ let company = "Sparks Lab"
 let jobType = "Internship"
 let img = "https://picsum.photos/200/100/?random=" + Math.round(Math.random() * 1000000) + ")"
 
-class Carousel {
+class miniCard {
 
     constructor(element) {
 
@@ -262,16 +262,6 @@ class Carousel {
 
 }
 
-for(var i; i < 2; i++){
-    $("#tbody").append(`<tr style='width: 100vw; height: 15vh; position: relative;'></tr><tr style='width: 100vw; height: 15vh; position: relative;'></tr>`)
-}
-$("#tbody").append(`<tr style='width: 100vw; height: 15vh; position: relative;'></tr><tr style='width: 100vw; height: 15vh; position: relative;'></tr><tr style='width: 100vw; height: 15vh; position: relative;'></tr><tr style='width: 100vw; height: 15vh; position: relative;'></tr><tr style='width: 100vw; height: 15vh; position: relative;'></tr><tr style='width: 100vw; height: 15vh; position: relative;'></tr><tr style='width: 100vw; height: 15vh; position: relative;'></tr><tr style='width: 100vw; height: 15vh; position: relative;'></tr><tr style='width: 100vw; height: 15vh; position: relative;'></tr><tr style='width: 100vw; height: 15vh; position: relative;'></tr>`)
 
-//let tr = document.querySelector('#board')
-let tr = document.getElementsByTagName('tr')
-for(const trElement of tr){
-    let carousel = new Carousel(trElement);
-}
-//let carousel = new Carousel(tr);
 
 
