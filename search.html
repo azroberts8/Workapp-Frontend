@@ -30,8 +30,11 @@
 
         .card {
             font-family: Georgia, serif;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            /*On mobile, vh is very weird so only percentages work, and they only work on the direct element not a wrapper element. This is why height and min height is specified*/
+            height: 20%;
+            min-height: 14.5vh;
+
             top: 50%;
             left: 50%;
             position:absolute;
@@ -52,7 +55,7 @@
             grid-template-rows: 100%;
         }
         .circular-image { 
-            padding-top: 5%;
+            padding-top: 0%;
             height:100%;
             border-top-left-radius: 50% 50%;
             border-top-right-radius: 50% 50%;
@@ -61,7 +64,7 @@
         }
     </style>
 </head>
-<body  width="100vw" height="100vh">
+<body>
 
 
 
@@ -79,16 +82,20 @@
 
     <script>
         for(var i; i < 2; i++){
-            $("#tbody").append(`<tr style='width: 100vw; height: 15vh; position: relative;'></tr><tr style='width: 100vw; height: 15vh; position: relative;'></tr>`)
+            $("#tbody").append(`<div class="tr" style='width: 100vw; height: 15vh; position: relative;'></div><div class="tr" style='width: 100vw; height: 15vh; position: relative;'></div>`)
         }
-        $("#tbody").append(`<tr style='width: 100vw; height: 15vh; position: relative;'></tr><tr style='width: 100vw; height: 15vh; position: relative;'></tr><tr style='width: 100vw; height: 15vh; position: relative;'></tr><tr style='width: 100vw; height: 15vh; position: relative;'></tr><tr style='width: 100vw; height: 15vh; position: relative;'></tr><tr style='width: 100vw; height: 15vh; position: relative;'></tr><tr style='width: 100vw; height: 15vh; position: relative;'></tr><tr style='width: 100vw; height: 15vh; position: relative;'></tr><tr style='width: 100vw; height: 15vh; position: relative;'></tr><tr style='width: 100vw; height: 15vh; position: relative;'></tr>`)
+        $("#tbody").append(`<div class="tr" style='width: 100vw; height: 15vh; position: relative;'></div><div class="tr" style='width: 100vw; height: 15vh; position: relative;'></div>`)
+        $("#tbody").append(`<div class="tr" style='width: 100vw; height: 15vh; position: relative;'></div><div class="tr" style='width: 100vw; height: 15vh; position: relative;'></div>`)
+        $("#tbody").append(`<div class="tr" style='width: 100vw; height: 15vh; position: relative;'></div><div class="tr" style='width: 100vw; height: 15vh; position: relative;'></div>`)
+        $("#tbody").append(`<div class="tr" style='width: 100vw; height: 15vh; position: relative;'></div><div class="tr" style='width: 100vw; height: 15vh; position: relative;'></div>`)
 
-        //let tr = document.querySelector('#board')
-        let tr = document.getElementsByTagName('tr')
+        //TODO allow scrolling over the mini cards on mobile
+        let tr = document.getElementsByClassName('tr')
         for(const trElement of tr){
             let carousel = new miniCard(trElement);
         }
     </script>
 </body>
 </html>
+
 

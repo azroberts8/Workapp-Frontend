@@ -243,8 +243,7 @@ class miniCard {
         for(var i=0 ; i<(4-parseInt(rating)); i++){ratingHTML+=star_empty;}
         cardInformation.querySelector("span").innerHTML = ratingHTML
         
-        //TODO Make search page mobile friendly
-
+        //TODO make one big class for mini-cards and cards
         card.appendChild(cardInformation)
     
 
